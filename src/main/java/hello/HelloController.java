@@ -20,20 +20,19 @@ public class HelloController {
     private final  DataSource dataSource;
     @RequestMapping("/")
     public String index() {
-        DruidDataSource wrapper=(DruidDataSource)dataSource;
-        wrapper.setUrl("jdbc:mysql://localhost:3306/test");
-        wrapper.setUsername("root");
-        wrapper.setPassword("root");
-        wrapper.setDriverClassName("com.mysql.jdbc.Driver");
+//        DruidDataSource wrapper=(DruidDataSource)dataSource;
+//        wrapper.setUrl("jdbc:mysql://localhost:3306/test");
+//        wrapper.setUsername("root");
+//        wrapper.setPassword("root");
+//        wrapper.setDriverClassName("com.mysql.jdbc.Driver");
         try {
             dataSource.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         Test a = m.findByidt(1);
-        System.out.println(a);
-
-        return "Greetings from Spring Boot!"+a;
+        Accounts aa = m.findByid(1);
+        return "Greetings from Spring Boot!"+a+aa;
     }
 
 }

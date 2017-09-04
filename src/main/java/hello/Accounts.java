@@ -14,6 +14,21 @@ public class Accounts implements Serializable {
     String email;
     String created_at;
     String updated_at;
+
+    @Override
+    public String toString() {
+        return "Accounts{" +
+                "id=" + id +
+                ", uuid='" + uuid + '\'' +
+                ", mobile_number='" + mobile_number + '\'' +
+                ", email='" + email + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", authentication_token='" + authentication_token + '\'' +
+                ", password_digest='" + password_digest + '\'' +
+                '}';
+    }
+
     String authentication_token;
     String password_digest;
 
