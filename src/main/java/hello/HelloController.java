@@ -1,6 +1,7 @@
 package hello;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.joda.time.LocalTime;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +18,8 @@ public class HelloController {
     }
 
 
-    private final  DataSource dataSource;
+    private final DataSource dataSource;
+
     @RequestMapping("/")
     public String index() {
 //        DruidDataSource wrapper=(DruidDataSource)dataSource;
@@ -30,9 +32,11 @@ public class HelloController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        LocalTime currentTime = new LocalTime();
+        System.out.println("The current local time is: " + currentTime);
         Test a = m.findByidt(1);
         Accounts aa = m.findByid(1);
-        return "Greetings from Spring Boot!"+a+aa;
+        return "Greetings from Spring Boot!" + a + aa;
     }
 
 }
